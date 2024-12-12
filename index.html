@@ -27,7 +27,7 @@
             const authUrl = `${AUTH_URL}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;
             console.log('Google url = ' + authUrl);
             // Navigate to the Google Sign-In page
-            // window.location.href = authUrl;
+            window.location.href = authUrl;
         });
     </script>
 </body>
