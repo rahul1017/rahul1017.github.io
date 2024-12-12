@@ -8,13 +8,15 @@
 <body>
     <h1>Google Sign-In Example</h1>
     <button id="google-sign-in-btn">Sign in with Google</button>
-
+    <h2>Open macOS App 2</h2>
+    <p>Click the button below to open the app:</p>
+    <a href="rahul1017.github.io://example">Open My App</a>
     <script>
         // Your Google OAuth 2.0 Client ID
         const CLIENT_ID = "112558817032-au6nbc2el3rrobvs1ra1qa3qbr241pta.apps.googleusercontent.com";
-        const REDIRECT_URI = "https://rahul1017.github.io/callback";
-        const AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth";
-        const RESPONSE_TYPE = "token"; // Use "code" if using server-side authorization
+        const REDIRECT_URI = "rahul1017.github.io://auth";
+        const AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount";
+        const RESPONSE_TYPE = "code"; // Use "code" if using server-side authorization
 
         // Scopes for the user's profile and email
         const SCOPES = "email profile";
@@ -23,9 +25,9 @@
         document.getElementById("google-sign-in-btn").addEventListener("click", () => {
             // Build the authorization URL
             const authUrl = `${AUTH_URL}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;
-
+            console.log('Google url = ' + authUrl);
             // Navigate to the Google Sign-In page
-            window.location.href = authUrl;
+            // window.location.href = authUrl;
         });
     </script>
 </body>
