@@ -31,7 +31,9 @@
                 //     <p>Email: ${data.email}</p>
                 // `;
 
-                window.location.href =  "rahul1017.netlify.app://name=${data.name}&email=${data.email}";
+                const name = data.name;
+                const email = data.email;
+                window.location.href =  "rahul1017.netlify.app://callback?name= +" + name + "&email=" + email;
             })
             .catch(error => console.error("Error fetching user info:", error));
         } else {
